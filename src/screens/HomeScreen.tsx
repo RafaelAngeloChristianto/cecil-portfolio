@@ -6,7 +6,9 @@ import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 
 import portrait from "../assets/portrait.jpg";
-// import cv from "../assets/Rafael Angelo - CV.pdf";
+
+import crebo1 from "../assets/crebo1.jpg";
+import crebo2 from "../assets/crebo2.jpg";
 
 import { SiInstagram, SiWhatsapp } from "react-icons/si";
 
@@ -140,8 +142,21 @@ export const HomeScreen: React.FC = () => {
           <h1 className="text-3xl font-bold mb-8 text-center text-[#B91C1C] font-Inter">
             Projects
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
-
+          <div className="grid grid-cols-2 gap-4 place-items-center">
+            <a href={crebo1} target="_blank" rel="noopener noreferrer">
+              <img
+                src={crebo1}
+                alt="CREBO Project 1"
+                className="w-[140px] sm:w-[180px] md:w-[200px] rounded-lg shadow-md hover:opacity-80 transition"
+              />
+            </a>
+            <a href={crebo2} target="_blank" rel="noopener noreferrer">
+              <img
+                src={crebo2}
+                alt="CREBO Project 2"
+                className="w-[140px] sm:w-[180px] md:w-[200px] rounded-lg shadow-md hover:opacity-80 transition"
+              />
+            </a>
           </div>
         </motion.div>
 
