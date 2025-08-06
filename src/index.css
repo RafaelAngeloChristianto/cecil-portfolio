@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Hammersmith+One&family=Hanuman:wght@100;300;400;700;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jomolhari&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@theme {
+  --font-Jomolhari: "Jomolhari", sans-serif;
+  --font-Hammersmith-One: "Hammersmith One", sans-serif;
+  --font-Halant: "Halant", sans-serif;
+  --font-Hanuman: "Hanuman", sans-serif;
+  --font-Inter: "Inter", sans-serif;
+  --font-Roboto: "Roboto", sans-serif;
+  --font-Open-Sans: "Open Sans", sans-serif
+  --font-Nunito: "Nunito", sans-serif
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-Inter);
+}
+
+.halant-font {
+  font-family: var(--font-Halant);
+}
+.hammersmith-font {
+  font-family: var(--font-Hammersmith-One);
+}
+.hanuman-font {
+  font-family: var(--font-Hanuman);
+}
+.jomolhari-font {
+  font-family: var(--font-Jomolhari);
+}
+.nunito-font {
+  font-family: var(--font-Nunito);
+}
+.open-sans-font {
+  font-family: var(--font-Open-Sans);
+}
+.roboto-font {
+  font-family: var(--font-Roboto);
+}
