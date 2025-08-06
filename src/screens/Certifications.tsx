@@ -3,11 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 
-
 export const Certifications: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const certificates = [{ title: "Prettiest Girl", file: "portrait.jpg" }];
+  const certificates = [
+    {
+      title: "Committee of CREBO II : Eclipse of Eternity",
+      file: "crebo1_certi.png",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
