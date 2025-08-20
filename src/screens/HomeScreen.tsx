@@ -1,234 +1,226 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { SiGmail, SiInstagram, SiWhatsapp } from "react-icons/si";
 
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 
 import portrait from "../assets/portrait.jpg";
-
-import crebo1 from "../assets/crebo1.jpg";
-import crebo2 from "../assets/crebo2.jpg";
-import crebo3 from "../assets/crebo3.jpg";
-import lia from "../assets/lia.jpg";
-import aqros from "../assets/aqros.png";
-import friday from "../assets/friday.png";
-
-import aqrosPDF from "../assets/Copy of Brief Teknis UAS Media Desain Visual Semester Genap2024-2025 (6).pdf";
-import fridayPDF from "../assets/MDV- (1).pdf";
-
-import { SiInstagram, SiWhatsapp } from "react-icons/si";
+import { artGalleryItems } from "../data/artGalleryItems";
 
 export const HomeScreen: React.FC = () => {
-  const [imgLoaded, setImgLoaded] = React.useState(false);
-  const projectItems = [
-    { image: crebo1, link: crebo1 },
-    { image: crebo2, link: crebo2 },
-    { image: lia, link: lia },
-    { image: crebo3, link: crebo3 },
-    { image: aqros, link: aqrosPDF },
-    { image: friday, link: fridayPDF },
-  ];
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="flex flex-col min-h-screen scroll-smooth">
-        <NavBar />
+    <div className="flex flex-col min-h-screen bg-gray-50 scroll-smooth">
+      <NavBar />
 
-        <main className="flex-grow">
-          {/* Hero Section */}
-          <motion.div
-            id="home"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row justify-center items-center flex-grow px-6 py-20 gap-10 "
-          >
-            <div className="text-center md:text-left">
-              <h1 className="font-Inter font-bold text-[24px] md:text-[28px] mb-2 text-[#B91C1C]">
-                Cecillia Tan Handoko
-              </h1>
-              <h3 className="font-Open Sans text-[16px] md:text-[18px] text-gray-700">
-                Designer
-              </h3>
-              <h4 className="font-Open Sans text-[14px] text-gray-600">
-                Student at Universitas Tarumanagara
-              </h4>
+      <main className="flex-grow mt-[50px]">
+        {/* Hero Section */}
+        <motion.section
+          id="home"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row items-center justify-between gap-12 px-6 py-20 md:py-28 max-w-6xl mx-auto"
+        >
+          {/* Text */}
+          <div className="text-center md:text-left md:w-1/2 max-w-lg">
+            <h1 className="text-4xl md:text-5xl font-hammersmith-one font-bold text-[#B91C1C] mb-3">
+              Cecillia Tan Handoko
+            </h1>
+            <h3 className="text-xl md:text-2xl text-gray-700 font-open-sans mb-1">
+              Designer
+            </h3>
+            <h4 className="text-md md:text-lg text-gray-500 font-open-sans mb-6">
+              Student at Universitas Tarumanagara
+            </h4>
 
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-4">
-                {/* <a target="_blank" href={cv} download="cv"> */}
-                <button className="p-3 mt-4 rounded-[10px] bg-[#B91C1C] text-white font-Inter hover:bg-[#991B1B] transition hover:cursor-pointer">
-                  Download CV
+            <div className="flex flex-col sm:flex-row sm:gap-4 gap-3 justify-center md:justify-start">
+              <button className="px-6 py-3 bg-[#B91C1C] text-white rounded-lg font-inter shadow-md hover:shadow-lg hover:bg-[#991B1B] hover:scale-105 transition">
+                Download CV
+              </button>
+              <Link to="/certifications">
+                <button className="px-6 py-3 bg-white text-[#B91C1C] border border-[#B91C1C] rounded-lg font-inter shadow-md hover:shadow-lg hover:scale-105 transition">
+                  Certifications
                 </button>
-                {/* </a> */}
-                <Link to="/certifications">
-                  <button className="p-3 mt-4 rounded-[10px] bg-white shadow-lg text-[#B91C1C] font-Inter border border-[#B91C1C] hover:bg-[#FEE2E2] transition hover:cursor-pointer">
-                    Certifications
-                  </button>
-                </Link>
-              </div>
+              </Link>
             </div>
+          </div>
 
-            <motion.img
-              initial={{ opacity: 0 }}
-              animate={imgLoaded ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6 }}
-              onLoad={() => setImgLoaded(true)}
-              decoding="async"
-              className="w-[250px] md:w-[350px] rounded-full hover:outline hover:outline-2 hover:outline-[#B91C1C]"
-              src={portrait}
-              alt="Portrait"
-            />
-          </motion.div>
-
-          {/* About Section */}
-          <motion.div
-            id="about"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          {/* Portrait */}
+          <motion.img
+            src={portrait}
+            alt="Portrait"
+            decoding="async"
+            initial={{ opacity: 0 }}
+            animate={imgLoaded ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
-            className="px-6 py-12 text-justify max-w-[900px] w-full shadow-xl mb-[50px] mt-[50px] bg-white rounded-[20px]"
-          >
-            <h1 className="text-2xl font-bold mb-4 text-[#B91C1C] font-Inter">
-              About Me
-            </h1>
-            <p className="text-base leading-relaxed text-gray-700">
-              My name is Cecillia Tan Handoko.
-            </p>
-          </motion.div>
+            onLoad={() => setImgLoaded(true)}
+            className="w-64 md:w-80 lg:w-96 rounded-full border-4 border-gray-200 shadow-xl hover:scale-105 transition mx-auto md:mx-0"
+          />
+        </motion.section>
 
-          {/* Education & Experience Section */}
-          <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col lg:flex-row justify-center items-center gap-8 font mb-[50px] px-4"
-          >
-            {/* Education */}
-            <div className="w-full max-w-[300px] shadow-xl px-5 py-12 rounded-[20px]">
-              <h1 className="text-2xl font-bold mb-4 text-[#B91C1C] font-Inter">
-                Educations
-              </h1>
+        {/* About Section */}
+        <motion.section
+          id="about"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto px-6 py-12 bg-white rounded-2xl shadow-lg mb-16 text-center md:text-left"
+        >
+          <h2 className="text-3xl font-jomolhari font-bold text-[#B91C1C] mb-6 text-center md:text-left">
+            About Me
+          </h2>
+          <p className="text-gray-700 leading-relaxed text-base md:text-lg font-open-sans text-justify">
+            My name is Cecillia Tan Handoko. I am passionate about design,
+            especially visual communication and creative projects. I enjoy
+            combining creativity with functionality in every project I
+            undertake.
+          </p>
+        </motion.section>
+
+        {/* Education & Experience */}
+        <motion.section
+          className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16 px-6"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Education */}
+          <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition">
+            <h2 className="text-2xl font-jomolhari font-bold text-[#B91C1C] mb-4">
+              Education
+            </h2>
+            <div className="space-y-4">
               <div>
-                <h2 className="font-Roboto">Bina Tunas Bangsa</h2>
-                <h3>Science</h3>
-                <h4 className="text-gray-600 text-[14px]">
+                <h3 className="font-roboto font-semibold text-gray-800">
+                  Bina Tunas Bangsa
+                </h3>
+                <p className="font-open-sans text-gray-600">Science</p>
+                <span className="text-gray-400 text-sm">
                   July 2020 - May 2023
-                </h4>
+                </span>
               </div>
-              <br />
               <div>
-                <h2 className="font-Roboto">
-                  Universitas Tarumanagara (UNTAR){" "}
-                </h2>
-                <h3>Desain, Komunikasi & Visual</h3>
-                <h4 className="text-gray-600 text-[14px]">
+                <h3 className="font-roboto font-semibold text-gray-800">
+                  Universitas Tarumanagara (UNTAR)
+                </h3>
+                <p className="font-open-sans text-gray-600">
+                  Desain, Komunikasi & Visual
+                </p>
+                <span className="text-gray-400 text-sm">
                   August 2024 - June 2028
-                </h4>
+                </span>
               </div>
-              <br />
             </div>
+          </div>
 
-            {/* Experience */}
-            <div className="w-full max-w-[300px] shadow-xl px-5 py-12 rounded-[20px]">
-              <h1 className="text-2xl font-bold mb-4 text-[#B91C1C] font-Inter">
-                Experiences
-              </h1>
+          {/* Experience */}
+          <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition">
+            <h2 className="text-2xl font-jomolhari font-bold text-[#B91C1C] mb-4">
+              Experience
+            </h2>
+            <div className="space-y-4">
               <div>
-                <h2 className="font-Roboto">CREBO Volunteer</h2>
-                <h3>Universitas Tarumanagara</h3>
-                <h4 className="text-gray-600 text-[14px]">
-                  September 2024 - Now
-                </h4>
+                <h3 className="font-roboto font-semibold text-gray-800">
+                  CREBO Volunteer
+                </h3>
+                <p className="font-open-sans text-gray-600">
+                  Universitas Tarumanagara
+                </p>
+                <span className="text-gray-400 text-sm">
+                  September 2024 - Present
+                </span>
               </div>
-              <br />
             </div>
-          </motion.section>
+          </div>
+        </motion.section>
 
-          {/* Projects Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto mb-[50px] shadow-xl w-full max-w-[900px] px-6 py-12 bg-[#FEE2E2] rounded-[20px]"
-            id="projects"
-          >
-            <h1 className="text-3xl font-bold mb-8 text-center text-[#B91C1C] font-Inter">
-              Projects
-            </h1>
-
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4 place-items-center">
-              {projectItems.map((item, i) => (
-                <a
-                  key={i}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+        {/* Projects */}
+        <motion.section
+          id="projects"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto px-6 py-12 mb-16"
+        >
+          <h2 className="text-3xl font-bold font-jomolhari text-[#B91C1C] mb-10 text-center">
+            Projects
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {artGalleryItems.map((item, i) => (
+              <Link to={`/gallery/${i}`} key={i}>
+                <div className="w-full aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition">
                   <img
                     src={item.image}
                     alt={`Project ${i + 1}`}
-                    className="w-[180px] h-[180px] object-cover rounded-lg shadow-md hover:opacity-80 transition"
+                    className="w-full h-full object-cover hover:opacity-80 hover:scale-105 transition-transform duration-300"
                   />
-                </a>
-              ))}
-            </div>
-          </motion.div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </motion.section>
 
-          {/* ✅ Updated Contact Section - aligned right */}
-          <div className="flex justify-end px-6 mr-[-150px] mb-[50px]">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="shadow-xl font-Inter px-6 py-6 rounded-[20px] bg-white w-full md:w-[400px]"
-              id="contact"
-            >
-              <h1 className="text-2xl font-bold mb-2 font-Inter text-[#B91C1C]">
-                Contact Me
-              </h1>
+        {/* Contact */}
+        <motion.section
+          id="contact"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto px-6 py-10 mb-16 bg-white rounded-2xl shadow-lg"
+        >
+          <h2 className="text-3xl font-bold font-jomolhari text-[#B91C1C] mb-6 text-center">
+            Contact Me
+          </h2>
 
-              <h4 className="text-sm text-gray-600 mb-2">
-                ✉️ cecilliahandoko555@gmail.com
-              </h4>
-
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Email */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base font-open-sans">
+                <SiGmail /> cecilliatanhandoko555@gmail.com
+              </div>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=cecilliahandoko555@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=cecilliatanhandoko555@gmail.com"
               >
-                <button className="w-[170px] h-[35px] text-[12px] font-Inter bg-white text-[#B91C1C] rounded-md mt-2 border border-[#B91C1C] hover:bg-[#FEE2E2] transition hover:cursor-pointer">
+                <button className="w-[200px] h-10 bg-[#B91C1C] text-white rounded-lg hover:bg-[#991B1B] transition font-inter">
                   Contact Me Here!
                 </button>
               </a>
+            </div>
 
-              <div className="flex flex-col gap-3 justify-center items-start mt-6 text-gray-700 text-sm">
-                <a
-                  href="https://www.instagram.com/liaura.c"
-                  target="_blank"
-                  className="flex items-center gap-2"
-                >
-                  <SiInstagram className="text-lg text-[#B91C1C]" />
-                  <span>liaura.c</span>
-                </a>
-                <a
-                  href="https://wa.me/6281514383863?text=Hello%20Cecillia%2C%20I%20want%20your%20service%20to%20create%20a%20design%20like%20..."
-                  target="_blank"
-                  className="flex items-center gap-2"
-                >
-                  <SiWhatsapp className="text-lg text-[#B91C1C]" />
-                  <span>+62 815-1438-3863</span>
-                </a>
-              </div>
-            </motion.div>
+            {/* Socials */}
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://www.instagram.com/liaura.c"
+                target="_blank"
+                className="flex items-center gap-2 text-gray-700 hover:text-[#B91C1C] transition text-sm md:text-base font-open-sans"
+              >
+                <SiInstagram />
+                <span>liaura.c</span>
+              </a>
+              <a
+                href="https://wa.me/6281514383863"
+                target="_blank"
+                className="flex items-center gap-2 text-gray-700 hover:text-[#B91C1C] transition text-sm md:text-base font-open-sans"
+              >
+                <SiWhatsapp />
+                <span>+62 815-1438-3863</span>
+              </a>
+            </div>
           </div>
-        </main>
+        </motion.section>
+      </main>
 
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

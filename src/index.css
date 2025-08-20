@@ -7,8 +7,8 @@
   --font-Hanuman: "Hanuman", sans-serif;
   --font-Inter: "Inter", sans-serif;
   --font-Roboto: "Roboto", sans-serif;
-  --font-Open-Sans: "Open Sans", sans-serif
-  --font-Nunito: "Nunito", sans-serif
+  --font-Open-Sans: "Open Sans", sans-serif;
+  --font-Nunito: "Nunito", sans-serif;
 }
 
 @tailwind base;

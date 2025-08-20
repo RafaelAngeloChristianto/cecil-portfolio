@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         halant: ["Halant", "sans-serif"],
-        hammersmith: ["Hammersmith One", "sans-serif"],
+        'hammersmith-one': ["Hammersmith One", "sans-serif"],
         hanuman: ["Hanuman", "sans-serif"],
         jomolhari: ["Jomolhari", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
