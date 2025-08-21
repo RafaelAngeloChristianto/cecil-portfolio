@@ -12,7 +12,7 @@ export const ArtGalleryScreen: React.FC = () => {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col justify-center items-center min-h-screen bg-[#fff0f0] px-4 py-10">
+      <div className="flex flex-col justify-center items-center mt-[50px] min-h-screen bg-[#fff0f0] px-4 py-10">
         <h1 className="text-center text-3xl font-bold mb-10 text-[#B91C1C] font-Inter">
           Art Gallery
         </h1>

@@ -1,4 +1,5 @@
 export default {
+  darkMode: false, // 🚨 lock Tailwind to light mode only
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
