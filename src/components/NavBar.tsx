@@ -24,9 +24,11 @@ export const NavBar: React.FC = () => {
     <nav className="w-full fixed top-0 z-50 backdrop-blur-sm bg-white/80 shadow-md transition-all">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
         {/* Logo */}
-        <h2 className="font-Inter font-bold text-xl md:text-2xl text-[#000] tracking-wide">
-          <span className="text-[#B91C1C]">Cecillia </span>Tan Handoko
-        </h2>
+        <Link to="/">
+          <h2 className="font-Inter font-bold text-xl md:text-2xl text-[#000] tracking-wide">
+            <span className="text-[#B91C1C]">Cecillia </span>Tan Handoko
+          </h2>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-12">
