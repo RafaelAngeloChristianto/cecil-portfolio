@@ -127,7 +127,7 @@ export const HomeScreen: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <h3 className="font-roboto font-semibold text-gray-800">
-                  CREBO Volunteer
+                  Member of CREBO
                 </h3>
                 <p className="font-open-sans text-gray-600">
                   Universitas Tarumanagara
