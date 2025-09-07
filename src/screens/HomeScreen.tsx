@@ -23,33 +23,33 @@ export const HomeScreen: React.FC = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-12 px-6 py-20 md:py-28 max-w-6xl mx-auto"
+          className="flex flex-col md:flex-row justify-center items-center gap-12 px-6 py-24 max-w-6xl mx-auto text-center"
         >
-          {/* Text */}
-          <div className="text-center md:text-left md:w-1/2 max-w-lg">
-            <h1 className="text-4xl md:text-5xl font-hammersmith-one font-bold text-[#B91C1C] mb-3">
+          <div className="md:w-1/2 md:text-left">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#B91C1C] font-Hammersmith-One mb-3">
               Cecillia Tan Handoko
             </h1>
-            <h3 className="text-xl md:text-2xl text-gray-700 font-open-sans mb-1">
+            <h3 className="text-xl md:text-2xl text-gray-700 font-Open-Sans mb-1">
               Designer
             </h3>
-            <h4 className="text-md md:text-lg text-gray-500 font-open-sans mb-6">
+            <h4 className="text-md md:text-lg text-gray-500 font-Open-Sans mb-6">
               Student at Universitas Tarumanagara
             </h4>
 
             <div className="flex flex-col sm:flex-row sm:gap-4 gap-3 justify-center md:justify-start">
-              <button className="px-6 py-3 bg-[#B91C1C] text-white rounded-lg font-inter shadow-md hover:shadow-lg hover:bg-[#991B1B] hover:scale-105 transition">
-                Download CV
-              </button>
+              <a target="_blank">
+                <button className="px-6 py-3 bg-[#B91C1C] text-white rounded-lg font-Inter shadow-md hover:shadow-lg hover:scale-105 transition-transform hover:cursor-pointer">
+                  Download CV
+                </button>
+              </a>
               <Link to="/certifications">
-                <button className="px-6 py-3 bg-white text-[#B91C1C] border border-[#B91C1C] rounded-lg font-inter shadow-md hover:shadow-lg hover:scale-105 transition">
+                <button className="px-6 py-3 bg-white text-[#B91C1C] border border-[#B91C1C] rounded-lg font-Inter shadow-md hover:shadow-lg hover:scale-105 transition-transform hover:cursor-pointer">
                   Certifications
                 </button>
               </Link>
             </div>
           </div>
 
-          {/* Portrait */}
           <motion.img
             src={portrait}
             alt="Portrait"
@@ -58,7 +58,7 @@ export const HomeScreen: React.FC = () => {
             animate={imgLoaded ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
             onLoad={() => setImgLoaded(true)}
-            className="w-64 md:w-80 lg:w-96 rounded-full border-4 border-gray-200 shadow-xl hover:scale-105 transition mx-auto md:mx-0"
+            className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-gray-200 shadow-xl hover:scale-105 transition-transform object-cover"
           />
         </motion.section>
 
