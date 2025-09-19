@@ -124,6 +124,7 @@ export const HomeScreen: React.FC = () => {
             <h2 className="text-2xl font-jomolhari font-bold text-[#B91C1C] mb-4">
               Experience
             </h2>
+
             <div className="space-y-4">
               <div>
                 <h3 className="font-roboto font-semibold text-gray-800">
@@ -133,7 +134,20 @@ export const HomeScreen: React.FC = () => {
                   Universitas Tarumanagara
                 </p>
                 <span className="text-gray-400 text-sm">
-                  September 2024 - Present
+                  September 2024 - Feb 2025
+                </span>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-roboto font-semibold text-gray-800">
+                  Member of CREBO 2
+                </h3>
+                <p className="font-open-sans text-gray-600">
+                  Universitas Tarumanagara
+                </p>
+                <span className="text-gray-400 text-sm">
+                  December 2024 - September 2025
                 </span>
               </div>
             </div>
