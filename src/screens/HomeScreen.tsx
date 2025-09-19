@@ -128,7 +128,7 @@ export const HomeScreen: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <h3 className="font-roboto font-semibold text-gray-800">
-                  Member of CREBO
+                  Member of CREBO 2
                 </h3>
                 <p className="font-open-sans text-gray-600">
                   Universitas Tarumanagara
@@ -141,7 +141,7 @@ export const HomeScreen: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <h3 className="font-roboto font-semibold text-gray-800">
-                  Member of CREBO 2
+                  Member of CREBO 3
                 </h3>
                 <p className="font-open-sans text-gray-600">
                   Universitas Tarumanagara
