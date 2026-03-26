@@ -11,6 +11,34 @@ export const Certifications: React.FC = () => {
       title: "Committee of CREBO II : Eclipse of Eternity",
       file: "crebo1_certi.png",
     },
+    {
+      title: "Committee of Crebo III : Dive Into The Dives",
+      file: "CREBO 3 DIVE INTO THE DIVES.jpeg",
+    },
+    {
+      title: "UNTAR ASTARIKA 2025 Committee",
+      file: "ASTARIKA UNTAR.jpeg",
+    },
+    {
+      title: "Creasia: Creativity Together, Growing Sustainable",
+      file: "Creasia Creativity Together Growing Sustainable.jpeg",
+    },
+    {
+      title: "Seminar Anti Plagiasi Visual UNTAR",
+      file: "Seminar Anti Plagiat Visual UNTAR.jpeg",
+    },
+    {
+      title: "STELLAR 8.0: Bloom",
+      file: "STELLAR 8.0 BLOOME UNTAR.jpeg",
+    },
+    {
+      title: "Pameran Multimedia UNTAR",
+      file: "Multimedia UNTAR.jpeg",
+    },
+    {
+      title: "Pameran Studi Media Desain UNTAR",
+      file: "Studi Media Design UNTAR.jpeg",
+    },
   ];
 
   return (
