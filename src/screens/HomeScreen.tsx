@@ -39,41 +39,11 @@ export const HomeScreen: React.FC = () => {
 
         <main className="flex-grow">
           {/* HERO */}
-          <section className="relative min-h-screen flex items-center justify-center px-6 pt-[50px]">
+          <section className="relative min-h-screen flex items-center justify-center px-6 pt-56 md:pt-16">
 
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-16 max-w-6xl w-full mx-auto">
-              {/* LEFT */}
-              <div className="md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start">
-                
-                <h1 className="text-5xl md:text-6xl font-semibold tracking-tight leading-tight mb-6 text-gray-900">
-                  I'm Cecillia Tan Handoko
-                </h1>
-
-                <h3 className="text-xl text-gray-700 mb-3 flex items-center justify-center md:justify-start gap-2">
-                  <MdOutlineDesignServices className="text-[#B91C1C]" />
-                  Designer & Creative Thinker
-                </h3>
-
-                <h4 className="text-md text-gray-600 mb-10 flex items-center justify-center md:justify-start gap-2">
-                  <HiOutlineAcademicCap className="text-[#B91C1C]" />
-                  Universitas Tarumanagara
-                </h4>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <button className="px-8 py-3 bg-[#B91C1C] text-white rounded-xl font-medium hover:bg-[#991B1B] transition-all shadow-lg hover:shadow-xl">
-                    Download CV
-                  </button>
-
-                  <Link to="/certifications">
-                    <button className="px-8 py-3 border-2 border-[#B91C1C] text-[#B91C1C] rounded-xl font-medium hover:bg-[#B91C1C] hover:text-white transition-all">
-                      View Certifications
-                    </button>
-                  </Link>
-                </div>
-              </div>
-
-              {/* RIGHT */}
-              <div className="relative">
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-6xl w-full mx-auto">
+              {/* Portrait first on mobile */}
+              <div className="relative order-first md:order-last">
                 <div className="absolute inset-0 bg-[#B91C1C]/5 rounded-full blur-xl"></div>
                 <motion.img
                   src={portrait}
@@ -81,27 +51,57 @@ export const HomeScreen: React.FC = () => {
                   initial={{ opacity: 0 }}
                   animate={imgLoaded ? { opacity: 1 } : {}}
                   onLoad={() => setImgLoaded(true)}
-                  className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-8 border-[#B91C1C]/20 shadow-2xl"
+                  className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 rounded-full object-cover border-8 border-[#B91C1C]/20 shadow-2xl"
                 />
+              </div>
+
+              {/* LEFT */}
+              <div className="md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-tight mb-4 md:mb-6 text-gray-900">
+                  I'm Cecillia Tan Handoko
+                </h1>
+
+                <h3 className="text-lg md:text-xl text-gray-700 mb-3 flex items-center justify-center md:justify-start gap-2">
+                  <MdOutlineDesignServices className="text-[#B91C1C]" />
+                  Designer & Creative Thinker
+                </h3>
+
+                <h4 className="text-sm md:text-md text-gray-600 mb-8 md:mb-10 flex items-center justify-center md:justify-start gap-2">
+                  <HiOutlineAcademicCap className="text-[#B91C1C]" />
+                  Universitas Tarumanagara
+                </h4>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start w-full sm:w-auto">
+                  <button className="w-full sm:w-auto px-8 py-3 bg-[#B91C1C] text-white rounded-xl font-medium hover:bg-[#991B1B] transition-all shadow-lg hover:shadow-xl">
+                    Download CV
+                  </button>
+
+                  <Link to="/certifications" className="w-full sm:w-auto">
+                    <button className="w-full px-8 py-3 border-2 border-[#B91C1C] text-[#B91C1C] rounded-xl font-medium hover:bg-[#B91C1C] hover:text-white transition-all">
+                      View Certifications
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
 
           {/* ABOUT */}
           <motion.section
+            id="about"
             {...fadeInUp}
-            className="max-w-4xl mx-auto px-6 py-20 bg-[#B91C1C]/5 rounded-3xl"
+            className="max-w-4xl mx-auto px-6 py-12 md:py-20 bg-[#B91C1C]/5 rounded-3xl"
           >
-            <h2 className="text-4xl font-semibold mb-3">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-3">About Me</h2>
             <div className="w-16 h-[3px] bg-[#B91C1C] mb-8 rounded-full"></div>
 
-            <p className="text-gray-700 leading-relaxed text-lg mb-10">
+            <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-8 md:mb-10">
               I am passionate about visual communication and creative design. I
               enjoy blending aesthetics with functionality, ensuring that every
               project delivers both impact and clarity.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-3 md:gap-6">
               {[
                 { value: "10+", label: "Projects Completed" },
                 { value: "2+", label: "Years Experience" },
@@ -111,7 +111,7 @@ export const HomeScreen: React.FC = () => {
                   key={i}
                   className="bg-white border border-[#B91C1C]/20 p-6 rounded-2xl shadow-md hover:shadow-xl transition"
                 >
-                  <h3 className="text-3xl font-semibold text-[#991B1B]">
+                  <h3 className="text-2xl md:text-3xl font-semibold text-[#991B1B]">
                     {stat.value}
                   </h3>
                   <p className="text-gray-500 text-sm">{stat.label}</p>
@@ -123,9 +123,9 @@ export const HomeScreen: React.FC = () => {
           {/* JOURNEY */}
           <motion.section
             {...fadeInUp}
-            className="max-w-6xl mx-auto px-6 py-20"
+            className="max-w-6xl mx-auto px-6 py-12 md:py-20"
           >
-            <h2 className="text-4xl font-semibold text-center mb-16 text-[#991B1B]">
+            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-10 md:mb-16 text-[#991B1B]">
               My Journey
             </h2>
 
@@ -180,14 +180,15 @@ export const HomeScreen: React.FC = () => {
 
           {/* PROJECTS */}
           <motion.section
+            id="projects"
             {...fadeInUp}
-            className="max-w-6xl mx-auto px-6 py-20 bg-gradient-to-b from-[#B91C1C]/5 to-transparent rounded-3xl"
+            className="max-w-6xl mx-auto px-6 py-12 md:py-20 bg-gradient-to-b from-[#B91C1C]/5 to-transparent rounded-3xl"
           >
-            <h2 className="text-4xl font-semibold text-center mb-4 text-[#991B1B]">
+            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-4 text-[#991B1B]">
               Featured Projects
             </h2>
 
-            <p className="text-gray-600 text-center mb-14">
+            <p className="text-gray-600 text-center mb-8 md:mb-14">
               Selected creative works and visual explorations
             </p>
 
@@ -210,11 +211,12 @@ export const HomeScreen: React.FC = () => {
 
           {/* CONTACT */}
           <motion.section
+            id="contact"
             {...fadeInUp}
-            className="max-w-4xl mx-auto px-6 py-20"
+            className="max-w-4xl mx-auto px-4 py-12 md:py-20"
           >
-            <div className="bg-gradient-to-br from-[#B91C1C] to-[#991B1B] text-white rounded-3xl p-10 shadow-2xl">
-              <h2 className="text-4xl font-semibold text-center mb-4">
+            <div className="bg-gradient-to-br from-[#B91C1C] to-[#991B1B] text-white rounded-3xl p-6 md:p-10 shadow-2xl">
+              <h2 className="text-3xl md:text-4xl font-semibold text-center mb-4">
                 Contact Me
               </h2>
 

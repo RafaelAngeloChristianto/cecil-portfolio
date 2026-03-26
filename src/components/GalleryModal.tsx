@@ -30,7 +30,7 @@ export const GalleryModal: React.FC<Props> = ({ arts, initialIndex = 0 }) => {
           <img
             src={selectedArt.image}
             alt={selectedArt.name}
-            className="w-full h-[500px] object-contain"
+            className="w-full h-[280px] sm:h-[400px] md:h-[500px] object-contain"
           />
         </motion.div>
 

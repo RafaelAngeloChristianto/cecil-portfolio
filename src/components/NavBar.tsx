@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
 export const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Scroll to section on hash change (after navigation)
   useEffect(() => {
     if (location.hash) {
       const element = document.querySelector(location.hash);
@@ -17,6 +17,15 @@ export const NavBar: React.FC = () => {
       }
     }
   }, [location]);
+
+  const scrollToSection = (section: string, closeMenu = false) => {
+    if (closeMenu) setIsOpen(false);
+    if (location.pathname === "/") {
+      document.querySelector(`#${section}`)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(`/#${section}`);
+    }
+  };
 
   const sections = ["about", "projects", "contact"];
 
@@ -46,8 +55,7 @@ export const NavBar: React.FC = () => {
               href={`#${section}`}
               onClick={(e) => {
                 e.preventDefault();
-                const target = document.querySelector(`#${section}`);
-                if (target) target.scrollIntoView({ behavior: "smooth" });
+                scrollToSection(section);
               }}
               className="font-Roboto text-base md:text-lg relative text-[#000] hover:text-[#B91C1C] transition-all duration-300
                 after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-0 after:bg-[#B91C1C] after:rounded-full after:transition-all after:duration-300
@@ -86,9 +94,7 @@ export const NavBar: React.FC = () => {
               href={`#${section}`}
               onClick={(e) => {
                 e.preventDefault();
-                const target = document.querySelector(`#${section}`);
-                if (target) target.scrollIntoView({ behavior: "smooth" });
-                setIsOpen(false);
+                scrollToSection(section, true);
               }}
               className="font-Roboto text-base text-[#000] hover:text-[#B91C1C] transition-all duration-200"
             >

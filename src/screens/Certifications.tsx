@@ -47,11 +47,11 @@ export const Certifications: React.FC = () => {
       <NavBar />
 
       {/* Main Content */}
-      <div className="flex-grow max-w-6xl mx-auto px-4 py-12 mt-[50px]">
-        <h1 className="text-4xl font-bold mb-2 text-center text-[#B91C1C]">
+      <div className="flex-grow max-w-6xl mx-auto px-4 py-8 md:py-12 mt-16">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2 text-center text-[#B91C1C]">
           Certifications
         </h1>
-        <p className="text-lg text-center mb-10 text-gray-600">
+        <p className="text-base md:text-lg text-center mb-8 md:mb-10 text-gray-600">
           A showcase of my achievements and learning milestones over the years.
         </p>
 
