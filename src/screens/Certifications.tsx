@@ -46,30 +46,58 @@ export const Certifications: React.FC = () => {
       {/* Navbar */}
       <NavBar />
 
-      {/* Main Content */}
-      <div className="flex-grow max-w-6xl mx-auto px-4 py-8 md:py-12 mt-16">
-        <h1 className="text-3xl md:text-4xl font-bold mb-2 text-center text-[#B91C1C]">
+      {/* Hero Banner */}
+      <div className="relative w-full bg-gradient-to-br from-[#B91C1C] to-[#7f1d1d] pt-28 pb-14 px-4 text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+        <motion.h1
+          className="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           Certifications
-        </h1>
-        <p className="text-base md:text-lg text-center mb-8 md:mb-10 text-gray-600">
+        </motion.h1>
+        <motion.p
+          className="mt-3 text-base md:text-lg text-red-100 max-w-xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
           A showcase of my achievements and learning milestones over the years.
-        </p>
+        </motion.p>
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+          <svg viewBox="0 0 1440 40" className="w-full" preserveAspectRatio="none">
+            <path d="M0,40 C360,0 1080,0 1440,40 L1440,40 L0,40 Z" fill="#f9fafb" />
+          </svg>
+        </div>
+      </div>
 
+      {/* Main Content */}
+      <div className="flex-grow max-w-6xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {certificates.map((cert, index) => (
             <motion.div
               key={index}
-              className="cursor-pointer rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+              className="cursor-pointer rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow bg-white group"
               whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05 }}
               onClick={() => setSelectedImage(cert.file)}
             >
-              <img
-                src={`/certificates/${cert.file}`}
-                alt={cert.title}
-                className="object-cover w-full h-56"
-              />
-              <div className="p-4 bg-white">
-                <h2 className="text-sm font-semibold text-center">
+              <div className="relative">
+                <img
+                  src={`/certificates/${cert.file}`}
+                  alt={cert.title}
+                  className="object-cover w-full h-56"
+                />
+                <div className="absolute inset-0 bg-[#B91C1C] opacity-0 group-hover:opacity-10 transition-opacity" />
+              </div>
+              <div className="p-4 border-t-2 border-[#B91C1C]">
+                <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-[#B91C1C] bg-red-50 px-2 py-0.5 rounded-full mb-2">
+                  Certificate
+                </span>
+                <h2 className="text-sm font-semibold text-center text-gray-800">
                   {cert.title}
                 </h2>
               </div>
